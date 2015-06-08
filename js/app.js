@@ -9,4 +9,8 @@ promiseApp.controller('MainController', function ($scope) {
             $('#newentry-button').click();
         }
     };
+
+    $scope.evaluation_data = {
+        responses: []
+    };
 });
