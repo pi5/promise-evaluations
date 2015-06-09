@@ -90,6 +90,12 @@
                                 <!-- Type ahead Not working -->
                                 <input type="text" id="dept" class="form-control typeahead"  data-source='["Computer Science", "Electrical Engineering"]' ng-model="entry.dept">
                             </div>
+
+                            <div>
+                                <label for="race">Race/Ethnicity</label>
+                                <select id="race" ng-model="entry.race" ng-options="r for r in defaults.races"></select>
+                            </div>
+
                             <div class="checkbox-inline">
                                 <input type="checkbox" data-toggle="toggle" data-on="STEM" data-off="Non STEM" data-width="100" ng-model="entry.stem">
                             </div>
@@ -136,9 +142,8 @@
                 </ul>
             </div>
 
-
-            <button class="btn btn-success"> Store in Browser</button>
-            <button class="btn btn-danger"> Clear Storage</button>
+            <!--<button class="btn btn-success" ng-click="localStorage.setItem('PROMISEdata', JSON.stringify(evaluation_data))"> Store in Browser</button>-->
+            <!--<button class="btn btn-danger" ng-click="localStorage.removeItem('PROMISEdata')"> Clear Storage</button>-->
         </div>
     </div>
 

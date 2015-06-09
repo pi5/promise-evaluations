@@ -12,13 +12,15 @@ promiseApp.controller('MainController', function ($scope) {
 
     $('#form').on('hidden.bs.modal', function(event) {
        $scope.modalActive = false;
-       console.log('Modal Closed');
     });
 
     $('#form').on('show.bs.modal', function(event) {
         $scope.modalActive = true;
-        console.log('Modal Opened');
     });
+
+    $scope.defaults = {
+        races:['American Indian', 'Alaskan Native', 'Black/African American', 'Hispanic/Latino', 'White/Caucasian', 'Pacific Islander','Other']
+    };
 
     $scope.event_details = {
         eventquestions : 5
