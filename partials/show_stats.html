@@ -7,7 +7,7 @@
         <input type="text" ng-model="eventdate" id="date-input" class="col-md-9 stats-field">
 
         <div class="col-md-3 stats-field">Number of Questions</div>
-        <input type="text" ng-model="eventquestions" id="no-questions" class="col-md-9 stats-field">
+        <input type="text" ng-model="event_details.eventquestions" id="no-questions" class="col-md-9 stats-field">
 
     </div>
     <div class="row">
@@ -25,7 +25,7 @@
                     <th> Males </th>
                     <th> Females </th>
                 </tr>
-                <tr ng-repeat="i in range(1,eventquestions)">
+                <tr ng-repeat="i in range(1,event_details.eventquestions)">
                     <td>{{i}}</td>
                     <td>{{i}}</td>
                     <td>{{i}}</td>
@@ -43,7 +43,7 @@
                     <th> URM </th>
                     <th> Non-URM </th>
                 </tr>
-                <tr ng-repeat="i in range(1,eventquestions)">
+                <tr ng-repeat="i in range(1,event_details.eventquestions)">
                     <td>{{i}}</td>
                     <td>{{i}}</td>
                     <td>{{i}}</td>
@@ -62,7 +62,7 @@
                     <th> STEM </th>
                     <th> Non-STEM </th>
                 </tr>
-                <tr ng-repeat="i in range(1,eventquestions)">
+                <tr ng-repeat="i in range(1,event_details.eventquestions)">
                     <td>{{i}}</td>
                     <td>{{i}}</td>
                     <td>{{i}}</td>

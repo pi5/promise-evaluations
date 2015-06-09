@@ -10,7 +10,9 @@ promiseApp.controller('MainController', function ($scope) {
         }
     };
 
-    $scope.eventquestions = 5;
+    $scope.event_details = {
+        eventquestions : 5
+    };
 
     $scope.evaluation_data = {
         responses: [],
