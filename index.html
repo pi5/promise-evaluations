@@ -77,43 +77,48 @@
                         <h4 class="modal-title" id="myModalLabel">Make a New Evaluation Entry</h4>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form ng-submit="addEntry()">
                             <div class="form-group">
-                                <label for="school">School</label>
+                                <label for="school">Campus Affiliation</label>
                                 <!-- Add more college campuses here for autocompelte -->
                                 <!-- Type ahead Not working -->
-                                <input type="text" id="school" class="form-control typeahead"  data-source='["UMBC", "UMCP", "UMB"]'>
+                                <input type="text" id="school" class="form-control typeahead"  data-source='["UMBC", "UMCP", "UMB"]' ng-model="entry.campus">
                             </div>
                             <div class="form-group">
                                 <label for="dept">Department Name</label>
                                 <!-- Add more college campuses here for autocompelte -->
                                 <!-- Type ahead Not working -->
-                                <input type="text" id="dept" class="form-control typeahead"  data-source='["Computer Science", "Electrical Engineering"]'>
+                                <input type="text" id="dept" class="form-control typeahead"  data-source='["Computer Science", "Electrical Engineering"]' ng-model="entry.dept">
                             </div>
                             <div class="checkbox-inline">
-                                <input type="checkbox" data-toggle="toggle" data-on="STEM" data-off="Non STEM" data-width="100">
+                                <input type="checkbox" data-toggle="toggle" data-on="STEM" data-off="Non STEM" data-width="100" ng-model="entry.stem">
                             </div>
                             <div class="checkbox-inline">
-                                <input type="checkbox" data-toggle="toggle" data-on="Male" data-off="Female" data-width="100">
+                                <input type="checkbox" data-toggle="toggle" data-on="Male" data-off="Female" data-width="100" ng-model="entry.gender">
                             </div>
                             <br>
                             <br>
                             <div class="radio-inline">
-                                <label><input type="radio" name="optradio">US Citizen</label>
+                                <label><input type="radio" name="optradio" value="citizen" ng-model="entry.citizenship">US Citizen</label>
                             </div>
                             <div class="radio-inline">
-                                <label><input type="radio" name="optradio">Permanent Resident</label>
+                                <label><input type="radio" name="optradio" value="permanent-resident" ng-model="entry.citizenship">Permanent Resident</label>
                             </div>
                             <div class="radio-inline">
-                                <label><input type="radio" name="optradio">International (Non U.S)</label>
+                                <label><input type="radio" name="optradio" value="international" ng-model="entry.citizenship">International (Non U.S)</label>
                             </div>
                             <!-- Add an ng-repeat to this element-->
-                            <ul class="pagination" ng-repeat="i in range(1,event_details.eventquestions)">
-                                <li><a href="#"><div class="numberCircle">1</div>  Not at all</a></li>
-                                <li><a href="#"><div class="numberCircle">2</div>  Somewhat</a></li>
-                                <li><a href="#"><div class="numberCircle">3</div>  Mostly</a></li>
-                                <li><a href="#"><div class="numberCircle">4</div>  Completely</a></li>
-                            </ul>
+                            <div class="row" ng-repeat="i in range(1, event_details.eventquestions)">
+                                <div class="col-md-2"> {{i}}</div>
+                                <ul class="pagination" class="col-md-8">
+                                    <li ng-click="entry.response[i]=1" ng-class="entry.response[i] == 1 ? 'active' : ''"><a href="#"><div class="numberCircle">1</div>  Not at all</a></li>
+                                    <li ng-click="entry.response[i]=2" ng-class="entry.response[i] == 2 ? 'active' : ''"><a href="#"><div class="numberCircle">2</div>  Somewhat</a></li>
+                                    <li ng-click="entry.response[i]=3" ng-class="entry.response[i] == 3 ? 'active' : ''"><a href="#"><div class="numberCircle">3</div>  Mostly</a></li>
+                                    <li ng-click="entry.response[i]=4" ng-class="entry.response[i] == 4 ? 'active' : ''"><a href="#"><div class="numberCircle">4</div>  Completely</a></li>
+                                </ul>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <button class="btn btn-success" type="submit">Add Entry</button>
                         </form>
                     </div>
                 </div>
