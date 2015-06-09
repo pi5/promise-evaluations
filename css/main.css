@@ -4,16 +4,21 @@
    Author's custom styles
    ========================================================================== */
 
+.stats-div {
+    margin:10px;
+    padding:25px;
+    padding-right:80px;
+    border:2px solid lightgrey;
+    border-radius: 10px;
+}
 
+.stats-field {
+    padding:2px;
+}
 
-
-
-
-
-
-
-
-
+.marginize-10 {
+    margin:10px;
+}
 
 
 
