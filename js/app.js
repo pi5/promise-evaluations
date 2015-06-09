@@ -10,7 +10,19 @@ promiseApp.controller('MainController', function ($scope) {
         }
     };
 
+    $scope.eventquestions = 5;
+
     $scope.evaluation_data = {
-        responses: []
+        responses: [],
+        questions: $scope.eventquestions
     };
+
+    $scope.range = function(min, max, step){
+        step = step || 1;
+        var input = [];
+        for (var i = min; i <= max; i += step) input.push(i);
+        return input;
+    };
+
+
 });

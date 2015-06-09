@@ -1,0 +1,75 @@
+<div class="stats-div">
+    <div class="row">
+        <div class="col-md-3 stats-field">Event Name</div>
+        <input type="text" ng-model="eventname" id="name-input" class="col-md-9 stats-field">
+
+        <div class="col-md-3 stats-field">Event Date</div>
+        <input type="text" ng-model="eventdate" id="date-input" class="col-md-9 stats-field">
+
+        <div class="col-md-3 stats-field">Number of Questions</div>
+        <input type="text" ng-model="eventquestions" id="no-questions" class="col-md-9 stats-field">
+
+    </div>
+    <div class="row">
+        <h3 class="col-md-12"> Filters </h3>
+
+        <div class="col-md-3">Total Responses</div>
+        <div type="text" id="total-responses" class="col-md-9"> {{evaluation_data.responses.length}}</div>
+
+
+        <h4 class="col-md-12"> By Gender </h4>
+        <div class="col-md-offset-4 col-md-4" >
+            <table class="table table-condensed table-bordered">
+                <tr>
+                    <th> # </th>
+                    <th> Males </th>
+                    <th> Females </th>
+                </tr>
+                <tr ng-repeat="i in range(1,eventquestions)">
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4"></div>
+
+
+        <h4 class="col-md-12"> By URM/Non-URM </h4>
+        <div class="col-md-offset-4 col-md-4" >
+            <table class="table table-condensed table-bordered">
+                <tr>
+                    <th> # </th>
+                    <th> URM </th>
+                    <th> Non-URM </th>
+                </tr>
+                <tr ng-repeat="i in range(1,eventquestions)">
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4"></div>
+
+
+
+        <h4 class="col-md-12"> By STEM/Non-STEM </h4>
+        <div class="col-md-offset-4 col-md-4" >
+            <table class="table table-condensed table-bordered">
+                <tr>
+                    <th> # </th>
+                    <th> STEM </th>
+                    <th> Non-STEM </th>
+                </tr>
+                <tr ng-repeat="i in range(1,eventquestions)">
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4"></div>
+
+    </div>
+</div>
