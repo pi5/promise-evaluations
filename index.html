@@ -21,11 +21,13 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="js/vendor/angular.js"></script>
         <script src="js/app.js"></script>
         <script scr="js/controllers.js"></script>
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
         <!--<script type="text/javascript">
           $(document).ready(function(){
             $('input.typeahead').typeahead({
@@ -35,6 +37,18 @@
             });
         });  
         </script-->
+        <style type="text/css">
+            .numberCircle {
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                padding: 0px;
+                border: 1px solid;
+                text-align: center;
+                font-family: Arial, sans-serif;
+                display: inline-block;
+            }
+        </style>
     </head>
     <body ng-controller="MainController" ng-keyup="openModal($event)">
         <!--[if lt IE 8]>
@@ -88,9 +102,30 @@
                     <!-- Type ahead Not working -->
                     <input type="text" id="dept" class="form-control typeahead"  data-source='["Computer Science", "Electrical Engineering"]'>
                   </div>
+                  <div class="checkbox-inline">
+                    <input type="checkbox" data-toggle="toggle" data-on="STEM" data-off="Non STEM" data-width="100">
+                  </div>
+                  <div class="checkbox-inline">
+                    <input type="checkbox" data-toggle="toggle" data-on="Male" data-off="Female" data-width="100">
+                  </div>
+                  <br></br>
+                    <div class="radio-inline">
+                      <label><input type="radio" name="optradio">US Citizen</label>
+                    </div>
+                    <div class="radio-inline">
+                      <label><input type="radio" name="optradio">Permanent Resident</label>
+                    </div>
+                    <div class="radio-inline">
+                      <label><input type="radio" name="optradio">International (Non U.S)</label>
+                    </div> 
+                    <label>This session helped me to understand </label>
+                    <ul class="pagination">
+                      <li><a href="#"><div class="numberCircle">1</div>  Not at all</a></li>
+                      <li><a href="#"><div class="numberCircle">2</div>  Somewhat</a></li>
+                      <li><a href="#"><div class="numberCircle">3</div>  Mostly</a></li>
+                      <li><a href="#"><div class="numberCircle">4</div>  Completely</a></li>
+                    </ul>
                 </form>  
-                  
-                  
               </div>
             </div>
           </div>
@@ -109,7 +144,7 @@
       <footer>
         <p>&copy; PROMISE AGEP 2015</p>
       </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </div> <!-- /container -->       
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
