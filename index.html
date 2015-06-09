@@ -128,8 +128,17 @@
 
         <div class="col-md-4">
             <h2>Responses</h2>
-            <p> We shall have the responses as a ul here. Clicking the list item should pop up the model with field values </p>
-            <p><a class="btn btn-default" href="#" role="button"> Clear? &raquo;</a></p>
+            <p ng-if="evaluation_data.responses.length == 0"> No responses added yet. Start adding responses by clicking 'Make new entry' or pressing the 'n' key.</p>
+
+            <div>
+                <ul>
+                    <li ng-repeat="i in range(1, evaluation_data.responses.length)"> Response #{{i}}</li>
+                </ul>
+            </div>
+
+
+            <button class="btn btn-success"> Store in Browser</button>
+            <button class="btn btn-danger"> Clear Storage</button>
         </div>
     </div>
 
